@@ -2,9 +2,9 @@
 
 class Band{
 
-  String ? id;
-  String ? name;
-  int    ? votes;
+  String  id;
+  String  name;
+  int     votes;
 
   Band({
     this.id,
@@ -14,10 +14,10 @@ class Band{
 
   factory Band.fromMap( Map<String, dynamic> obj)
   => Band(
-      id: obj['id'],
-      name: obj['name'],
-      votes: obj['votes'],
-  //La idea del factory Constructor es regresar una nueva instancia de mi Clase
+      id:    (obj.containsKey('id'))    ? obj['id']    : 'No existe un ID',
+      name:  (obj.containsKey('nname'))  ? obj['nname']  : 'No existe un Nombre',
+      votes: (obj.containsKey('vvotes')) ? obj['vvotes'] : 0,
+  //La idea del factory Constructor es regresar una nu eva instancia de mi Clase
   );
   
 
